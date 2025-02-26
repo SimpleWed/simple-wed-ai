@@ -1,0 +1,14 @@
+<div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  @for (listing of listOfListings; track $index) {
+  <div class="align-middle justify-items-center mx-2 md:w-full my-2">
+
+    <a href="#" class="">
+      <img class="h-auto sm:max-w-full rounded-lg" src="{{listing['listingImageUrl']}}" alt="">
+      <h5 class="sm:max-w-full lg:w-50 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        {{listing['listingTitle']}}</h5>
+      <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of
+        2021 so far, in reverse chronological order.</p>
+    </a>
+  </div>
+  }
+</div>
