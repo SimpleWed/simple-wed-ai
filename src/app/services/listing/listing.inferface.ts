@@ -7,5 +7,6 @@ export interface Listing {
   listingImageUrl: string;
   listingPosterName: string;
   listingPosterID: string;
+  listingPostalCode: string;
   // ... other properties
 }

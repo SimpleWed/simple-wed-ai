@@ -1,0 +1,33 @@
+
+@theme {
+  --color-app-bg-light: white;
+  --color-app-bg-dark: #808080;
+
+  --color-app-btn-primary: pink;
+  --color-app-btn-secondary: pink;
+  --color-app-btn-dull: pink;
+
+  --color-app-theme-light-1:pink;
+  --color-app-theme-light-2:pink;
+  --color-app-theme-light-3:pink;
+  --color-app-theme-light-4:pink;
+  --color-app-theme-light-5:pink;
+  --color-app-theme-light-6:pink;
+  --color-app-theme-light-7:pink;
+  --color-app-theme-light-8:pink;
+  --color-app-theme-light-9:pink;
+  --color-app-theme-light-10:pink;
+  --color-app-theme-light-11:pink;
+
+  --color-app-theme-dark-1:pink;
+  --color-app-theme-dark-2:pink;
+  --color-app-theme-dark-3:pink;
+  --color-app-theme-dark-4:pink;
+  --color-app-theme-dark-5:pink;
+  --color-app-theme-dark-6:pink;
+  --color-app-theme-dark-7:pink;
+  --color-app-theme-dark-8:pink;
+  --color-app-theme-dark-9:pink;
+  --color-app-theme-dark-10:pink;
+  --color-app-theme-dark-11:pink;
+}

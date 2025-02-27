@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ListingService } from '../../../services/listing/listing.service';
 
 @Component({
@@ -7,13 +7,9 @@ import { ListingService } from '../../../services/listing/listing.service';
   templateUrl: './alllistings.component.html',
   styleUrl: './alllistings.component.css',
 })
-export class AlllistingsComponent implements OnInit {
+export class AlllistingsComponent {
   listingService = inject(ListingService);
   listOfListings = [];
-
-  ngOnInit(): void {
-    this.get10MostRecentListings();
-  }
 
   async get10MostRecentListings() {
     try {
@@ -22,7 +18,6 @@ export class AlllistingsComponent implements OnInit {
         .subscribe((data: any) => {
           this.listOfListings = data;
         });
-      console.log('FETCH DATA');
     } catch (error) {
       console.error('Error getting all listings:', error);
       // ... display an error message to the user

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../../services/auth/auth.service';
 @Component({
   selector: 'app-navbarprofilepicdropdown',
   imports: [],
@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './navbarprofilepicdropdown.component.css',
 })
 export class NavbarprofilepicdropdownComponent {
-  @Input() photoURL = '';
+  authService = inject(AuthService);
 }

@@ -19,7 +19,8 @@ export class AddlistingComponent {
       listingImageUrl:
         'https://images.unsplash.com/photo-1596704017254-9b121068fb31?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       listingPosterName: 'John Doe',
-      listingPosterID: this.authService.userState()?.uid ?? null,
+      listingPosterID: this.authService.userState()?.user?.uid ?? null,
+      listingPostalCode: 'L8W 1X4',
       // ... other data
     };
 

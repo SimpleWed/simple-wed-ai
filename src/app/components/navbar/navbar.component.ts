@@ -1,22 +1,25 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DarkmodeService } from '../../services/darkmode/darkmode.service';
 import { AuthService } from '../../services/auth/auth.service';
-import { getAuth } from 'firebase/auth';
-import { NavbarprofilepicdropdownComponent } from '../navbarprofilepicdropdown/navbarprofilepicdropdown.component';
+import { NavbarprofilepicdropdownComponent } from './navbarprofilepicdropdown/navbarprofilepicdropdown.component';
+import { StripeButtonComponent } from '../payment/stripe-button/stripe-button.component';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, NavbarprofilepicdropdownComponent],
+  imports: [
+    CommonModule,
+    NavbarprofilepicdropdownComponent,
+    StripeButtonComponent,
+    RouterLink,
+  ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   darkModeService = inject(DarkmodeService);
   authService = inject(AuthService);
   darkModeToggled = this.darkModeService.DARK_TOGGLE();
-  ngOnInit(): void {
-    console.log(this.authService.userState());
-  }
 
   darkModeToggleClickHandler() {
     this.darkModeService.toggleDarkModeChange();

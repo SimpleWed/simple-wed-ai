@@ -77,10 +77,11 @@ export class ListingService {
 
   get10RecentListings(): Observable<Listing[]> {
     try {
+      console.log('GETTING LISTINGS....');
       const q = query(
         this.listingsCollection,
         orderBy('listingDatePosted', 'desc'), // Order by date posted, most recent first
-        limit(10) // Limit to 10 results
+        limit(3) // Limit to 10 results
       );
 
       return collectionData(q, { idField: 'uuid' }) as Observable<Listing[]>; // Return as Observable<Listing[]>

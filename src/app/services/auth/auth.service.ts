@@ -1,4 +1,4 @@
-import { Injectable, OnInit, signal } from '@angular/core';
+import { inject, Injectable, OnInit, Signal, signal } from '@angular/core';
 import {
   Auth,
   getAuth,
@@ -6,25 +6,32 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from '@angular/fire/auth';
+import { StripePremiumStatusService } from '../payment/stripe-premium-status.service';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  stripePremiumStatusService: StripePremiumStatusService = inject(
+    StripePremiumStatusService
+  );
   authuser: any;
-  userState: any = signal(null);
+  userState: any;
+  isPremiumMember: any;
   constructor(private readonly firebaseAuth: Auth) {
     this.authuser = getAuth();
-    console.log(this.authuser);
-    onAuthStateChanged(this.authuser, (user) => {
+    this.userState = signal(null);
+    this.isPremiumMember = signal(false);
+    onAuthStateChanged(this.authuser, async (user) => {
       if (user) {
         console.log('Sign In Success');
-        this.userState.set(user);
+        this.userState.set({ user });
+        this.isPremiumMember.set(
+          await this.stripePremiumStatusService.getActiveSubscriptionBOOL()
+        );
       } else {
-        // ...
-        console.log('Sign Out Success');
         this.userState.set(null);
+        this.isPremiumMember.set(false);
       }
-      console.log(user);
     });
   }
 

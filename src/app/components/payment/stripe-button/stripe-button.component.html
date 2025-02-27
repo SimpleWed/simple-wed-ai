@@ -1,0 +1,10 @@
+@if (authService.isPremiumMember()){
+<button (click)="subscriberClickHandler()"
+  class="ml-2 rounded-2xl bg-app-btn-primary hover:bg-purple-400 text-white font-bold py-2 px-4 border border-pink-400">
+  Manage Subscription</button>
+}@else{
+<button
+  class="ml-2 rounded-2xl bg-app-btn-primary hover:bg-purple-400 text-white font-bold py-2 px-4 border border-pink-400"
+  (click)="NonSubscriberClickHandler()">
+  Try Premium</button>
+}
