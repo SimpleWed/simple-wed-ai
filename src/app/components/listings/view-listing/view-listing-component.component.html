@@ -1,0 +1,10 @@
+@if (listingData == null) {
+<h1>Listing Failed</h1>
+}@else {
+<h5 class="sm:max-w-full lg:w-50 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+  {{listingData['listingTitle']}}</h5>
+<p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of
+  2021 so far, in reverse chronological order.</p>
+<img class="h-auto sm:max-w-full rounded-lg" src="{{listingData['listingImageUrl']}}" alt="">
+
+}

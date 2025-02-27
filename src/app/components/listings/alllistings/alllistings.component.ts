@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ListingService } from '../../../services/listing/listing.service';
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-alllistings',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './alllistings.component.html',
   styleUrl: './alllistings.component.css',
 })

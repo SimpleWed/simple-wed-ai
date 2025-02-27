@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddlistingComponent } from '../../components/listings/addlisting/addlisting.component';
+import { AddlistingComponent } from '../../../components/listings/addlisting/addlisting.component';
 
 @Component({
   selector: 'app-create-listing-page',
