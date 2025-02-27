@@ -11,6 +11,7 @@ import {
 } from '@angular/fire/app-check';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getVertexAI, provideVertexAI } from '@angular/fire/vertexai';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,5 +28,6 @@ export const appConfig: ApplicationConfig = {
     // }),
     provideFirestore(() => getFirestore()),
     provideVertexAI(() => getVertexAI()),
+    provideStorage(() => getStorage()),
   ],
 };

@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth/auth.service';
 import { NavbarprofilepicdropdownComponent } from './navbarprofilepicdropdown/navbarprofilepicdropdown.component';
 import { StripeButtonComponent } from '../payment/stripe-button/stripe-button.component';
 import { RouterLink } from '@angular/router';
+import { getAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-navbar',
   imports: [
@@ -19,6 +20,8 @@ import { RouterLink } from '@angular/router';
 export class NavbarComponent {
   darkModeService = inject(DarkmodeService);
   authService = inject(AuthService);
+  auth = getAuth();
+
   darkModeToggled = this.darkModeService.DARK_TOGGLE();
 
   darkModeToggleClickHandler() {

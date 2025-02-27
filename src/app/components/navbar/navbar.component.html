@@ -3,12 +3,15 @@
     <a routerLink="/"
       class="text-gray-800 transition-colors duration-300 transform dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6">
       Home</a>
+    @if(this.authService.userState() == null){
 
+    }@else{
     <a routerLink="/createListing"
       class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">
       Create Listing
     </a>
-    @if(this.authService.userState() == null){
+    }
+    @if(!this.auth.currentUser){
     <span (click)="loginClickHandler()"
       class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6">
       Login

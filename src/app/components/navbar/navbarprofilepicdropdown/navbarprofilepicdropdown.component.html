@@ -1,2 +1,6 @@
+@if(this.authService.userState() == null){
+
+}@else{
 <img id="userProfileDropdown" class="md:mx-1.5 xs:mx-6 w-10 h-10 rounded-full"
-  src={{this.authService.userState().user.photoURL}} alt="Rounded avatar">
+  [src]="this.authService.userState().photoURL" alt="Rounded avatar">
+}

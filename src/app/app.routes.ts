@@ -5,6 +5,9 @@ import { ViewListingPageComponent } from './pages/listings/view-listing-page/vie
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'createListing', component: CreateListingPageComponent },
+  {
+    path: 'createListing',
+    component: CreateListingPageComponent,
+  },
   { path: 'viewListing/:id', component: ViewListingPageComponent },
 ];

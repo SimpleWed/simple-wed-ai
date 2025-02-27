@@ -1,1 +1,40 @@
-<button (click)="createNewListing()" class="btn-primary btn">ADD</button>
+<div class="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
+  <h2 class="text-2xl font-semibold mb-4">Create Listing</h2>
+
+  <form class="space-y-4">
+    <div>
+      <label for="listingTitle" class="block text-sm font-medium text-gray-700">Listing Title</label>
+      <input type="text" id="listingTitle" name="listingTitle" [(ngModel)]="listingTitle"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        value="My Listing">
+    </div>
+
+    <div>
+      <label for="listingDescription" class="block text-sm font-medium text-gray-700">Listing Description</label>
+      <textarea id="listingDescription" name="listingDescription" [(ngModel)]="listingDescription"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">This is a test listing.</textarea>
+    </div>
+
+    <div>
+      <label for="listingPosterName" class="block text-sm font-medium text-gray-700">Poster Name</label>
+      <input type="text" id="listingPosterName" name="listingPosterName" [(ngModel)]="listingPosterName"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        value="John Doe">
+    </div>
+
+    <div>
+      <label for="listingPostalCode" class="block text-sm font-medium text-gray-700">Postal Code</label>
+      <input type="text" id="listingPostalCode" name="listingPostalCode" [(ngModel)]="listingPostalCode"
+        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+        value="L8W 1X4">
+    </div>
+
+    <div class="flex justify-end">
+      <button type="submit" (click)="onSubmitNewListing()"
+        class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<input type="file" (change)="onFileSelected($event)" accept="image/png, image/jpeg" />
