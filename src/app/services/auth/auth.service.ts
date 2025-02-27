@@ -7,10 +7,12 @@ import {
   onAuthStateChanged,
 } from '@angular/fire/auth';
 import { StripePremiumStatusService } from '../payment/stripe-premium-status.service';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  router: Router = inject(Router);
   stripePremiumStatusService: StripePremiumStatusService = inject(
     StripePremiumStatusService
   );
@@ -58,5 +60,6 @@ export class AuthService {
     } catch (e) {
       console.error('Sign out failed!');
     }
+    this.router.navigate(['/']);
   }
 }
